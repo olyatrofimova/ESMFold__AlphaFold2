@@ -22,10 +22,12 @@ KPTENNEDFNIVAVASNFATTDLDADRGKLPGKKLPLEVLKEMEANARKAGCTRGCLICLSHIKCTPKMKKFIPGRCHTY
 Затем сравниваем средние значения pLDDT(predicted Local Distance Difference Test) - оценка того, насколько программа уверена в предсказанной структуре. 
 В результате сравнения средних значений pLDDT получаем:
 
+```
 Белок                     | ESMFold (0-100)    | ColabFold (0-100)  | Разница
 -------------------------------------------------------------------------------------
 1LYZ_HenEggWhiteLysozyme  | 95.14              | 98.10              | -2.97
 GLuc_GaussiaPrinceps      | 54.66              | 74.27              | -19.61
+```
 
 ESMFold и AlphaFold2 одинаково хорошо справляются с предсказанием структуры на простом, хорошо изученном белке, но AlphaFold2 значительно лучше на сложном.
 
