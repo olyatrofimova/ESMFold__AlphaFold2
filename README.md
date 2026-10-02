@@ -1,25 +1,29 @@
 # ESMFold__AlphaFold2
 Рассматриваем две структуры:
-### 1. Лизоцим (Hen Egg White Lysozyme) — контрольный белок
+#### 1. Лизоцим (Hen Egg White Lysozyme) — контрольный белок
 **PDB:** 1LYZ (рентгеновская кристаллография, 2.00 Å)
 **Длина:** 129 а.о.
 Хорошо изученный, стабильный белок. Оба метода должны показать высокий pLDDT (>90).
 
 ```text
 >1LYZ_HenEggWhiteLysozyme
-KVFGRCELAAAMKRHGLDNYRGYSLGNWVCAAKFESNFNTQATNRNTDGSTDYGILQINSRWWCNDGRTPGSRNLCNIPCSALLSSDITASVNCAKKIVSDGNGMNAWVAWRNRCKGTDVQAWIRGCRL
+KVFGRCELAAAMKRHGLDNYRGYSLGNWVCAAKFESNFNTQATNRNTDGSTDYGILQINSRWWC
+NDGRTPGSRNLCNIPCSALLSSDITASVNCAKKIVSDGNGMNAWVAWRNRCKGTDVQAWIRGCRL
 ```
 
-### 2. Gaussia Luciferase (GLuc) — белок с известной ЯМР-структурой
+#### 2. Gaussia Luciferase (GLuc) — белок с известной ЯМР-структурой
 **PDB:** 7D2O (ЯМР, 2020) / 9FLA (ЯМР, 2024)
 **Длина:** 168 а.о.
 
 ```text
 >GLuc_GaussiaPrinceps
-KPTENNEDFNIVAVASNFATTDLDADRGKLPGKKLPLEVLKEMEANARKAGCTRGCLICLSHIKCTPKMKKFIPGRCHTYEGDKESAQGGIGEAIVDIPEIPGFKDLEPMEQFIAQVDLCVDCTTGCLKGLANVQCSDLLKKWLPQRCATFASKIQGQVDKIKGAGGD
+KPTENNEDFNIVAVASNFATTDLDADRGKLPGKKLPLEVLKEMEANARKAGCTRGCLICLSHIKCTPKMKKFIPGRCHTYE
+GDKESAQGGIGEAIVDIPEIPGFKDLEPMEQFIAQVDLCVDCTTGCLKGLANVQCSDLLKKWLPQRCATFASKIQGQVDKIKGAGGD
 ```
 Используя [ESMFold](https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/ESMFold.ipynb#scrollTo=CcyNpAvhTX6q) и [AlphaFold2](https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb#scrollTo=G4yBrceuFbf3) получаем ZIP-архивы c необходимыми файлами.
-Затем сравниваем средние значения pLDDT(predicted Local Distance Difference Test) - оценка того, насколько программа уверена в предсказанной структуре. 
+
+## Сравнение pLDDT
+Затем сравниваем pLDDT (predicted Local Distance Difference Test) - оценка того, насколько программа уверена в предсказанной структуре. 
 В результате сравнения средних значений pLDDT получаем:
 
 ```
@@ -31,6 +35,7 @@ GLuc_GaussiaPrinceps      | 54.66              | 74.27              | -19.61
 
 ESMFold и AlphaFold2 одинаково хорошо справляются с предсказанием структуры на простом, хорошо изученном белке, но AlphaFold2 значительно лучше на сложном.
 
+## Визуализация
 Наконец, визуализируем структуры с помощью py3Dmol. 
 - 1LYZ(обе): вся структура синяя, а значит уверенность высокая
 - GLuc(ESMFold): много красного и жёлтого, нет уверенности
